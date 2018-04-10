@@ -8,12 +8,14 @@ import { NavController,Slides,MenuController } from 'ionic-angular';
 export class HomePage {
   @ViewChild(Slides) slides: Slides;
   newMove:number = 0;
-  themColor:string='#30d05f';
+  themColor:string = '#30d05f';
+  stationContrain:boolean = false;
 
   constructor(public navCtrl: NavController,private el:ElementRef,public menuCtrl: MenuController) {
+    //消息轮播动画
     setInterval(()=>{
       if(this.newMove+60 === 0){
-        this.el.nativeElement.querySelector('.newItem').style.marginTop = '0px'
+        this.el.nativeElement.querySelector('.newItem').style.marginTop = '0px';
         this.newMove = 0
       }else{
         let count =0;
@@ -30,7 +32,8 @@ export class HomePage {
     },5000);
   }
 
-  openMenu(flag) {
+  //侧边菜单导航
+  openMenu(flag:boolean) {
     if(flag){
       this.menuCtrl.enable(true, 'filterMenu');
       this.menuCtrl.enable(false, 'mangeMenu');
@@ -39,6 +42,15 @@ export class HomePage {
       this.menuCtrl.enable(true, 'mangeMenu');
     }
     this.menuCtrl.open();
+    this.stationContrain = false;
+  }
+
+  //侧边菜单地铁详细站点显示隐藏切换
+  toggleStation(event:Event){
+    console.log(event)
+    if (/\d+号线/.test(event.target.innerHTML)){
+
+    }
   }
 
 }
