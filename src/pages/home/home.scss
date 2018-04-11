@@ -130,3 +130,42 @@ ion-menu ion-item-divider{
 ion-menu ion-grid ion-col button span{
   color: #2d2d2d!important;
 }
+
+ion-menu ion-col span p{
+  color:gray;
+  font-size: 10px;
+}
+
+.stationContrain ion-col span{
+  display: inline-block;
+  border-top: 10px solid #30d05f;
+  text-align: center;
+  height: 50px;
+  width: 25%;
+}
+
+.stationContrain ion-col span div{
+  border: 1px solid #30d05f;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: -13px;
+}
+
+.stationContrain ion-col span p{
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.stationContrain >div:nth-child(1){
+  margin: 5px;
+  font-size: 16px;
+  color: gray;
+  font-weight: 600;
+}
+
+.isClickLineBtn{
+  background-color: #30d05f;
+}

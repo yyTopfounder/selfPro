@@ -1,5 +1,85 @@
-<div ng-include="./filterMenu.html"></div>
-<div ng-include="./mangeMenu.html"></div>
+<ion-menu id="filterMenu" [content]="mycontent" side="right">
+  <ion-content>
+    <div class="trafficContrain" [ngStyle]="{'background-color':themColor}">交通</div>
+    <ion-grid (click)="toggleStation($event)">
+      <ion-row>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}" [ngClass]="{'isClickLineBtn':clickLineName === '1'}">1号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}" [ngClass]="{'isClickLineBtn':clickLineName === '2'}">2号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}" >3号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}" >4号线</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">5号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">6号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">7号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">8号线</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">9号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">10号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">11号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">12号线</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">13号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">14号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">15号线</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="titleButton" outline [ngStyle]="{'border-color':themColor}">16号线</button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="stationContrain" class="stationContrain">
+        <div>详细站点</div>
+        <ion-col col-12>
+          <span *ngFor="let stationItem of lineStation"><div></div><p>{{stationItem}}</p></span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item-group>
+      <ion-item-divider [ngStyle]="{'background-color':themColor}">其他</ion-item-divider>
+      <ion-item>论坛相册</ion-item>
+      <ion-item>热帖</ion-item>
+      <ion-item>悬赏</ion-item>
+    </ion-item-group>
+  </ion-content>
+</ion-menu>
+<ion-menu id="mangeMenu" [content]="mycontent" side="right">
+  <ion-item-group>
+    <ion-item-divider [ngStyle]="{'background-color':themColor}">管理员</ion-item-divider>
+    <ion-item>张三</ion-item>
+    <ion-item>王五</ion-item>
+  </ion-item-group>
+</ion-menu>
 <ion-content #mycontent>
   <div class="bannerContrain">
     <ion-slides pager autoplay="3000" loop=true>
