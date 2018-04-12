@@ -1,3 +1,25 @@
-page-contact {
+.contactContrain ion-list{
+  margin: 0px!important;
+  margin-top: 10px!important;
+}
+.contactContrain{
+ background-color: #D3D3D3;
+}
+.contactContrain .userImgRightBtn{
+  width: 100px!important;
+  border: 0px;
+}
+.contactContrain .userImgRightBtn .input-wrapper{
+  text-align: right!important;
+  color: gray;
+}
+.contactContrain ion-item .item-inner button .item-inner{
+  border: 0px!important;
+}
 
+.contactContrain ion-item ion-icon{
+  font-size: 22px;
+}
+.contactContrain .moreItemList .item-block{
+  min-height: 0px!important;
 }
