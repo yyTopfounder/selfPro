@@ -45,11 +45,11 @@ export class HomePage {
     }
     this.menuCtrl.open();
     this.stationContrain = false;
-    this.clickLineName = 0;
+    this.clickLineName = '';
   }
 
   //侧边菜单地铁详细站点显示隐藏切换
-  toggleStation(event:Event){
+  toggleStation(event){
     console.log(event);
     if(/\d+号线/.test(event.target.innerText)){
       this.stationContrain = true;
