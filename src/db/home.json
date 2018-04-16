@@ -1,18 +1,20 @@
 {
-  "slideImgName":["http://placehold.it/350x100","http://placehold.it/350x100","http://placehold.it/350x100"],
-  "news":["消息1","消息2","消息3"],
-  "homesCardAry":[{
-    "postsName":"张三",
-    "postTime":"2018-1-1",
-    "browseNumber":8888,
-    "headPortrait":"http://placehold.it/60x60",
-    "level":"v2",
-    "levelFlag":"up",
-    "cardTitle":"一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择",
-    "metroStation":"通河新村",
-    "cardText":"一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择,一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择.",
-    "homeImgAry":["http://placehold.it/80x80","http://placehold.it/80x80","http://placehold.it/80x80"
-                    ,"http://placehold.it/80x80","http://placehold.it/80x80","http://placehold.it/80x80"],
-    "homeCommentAry":["很不错","很不错"]
-  }]
+  "home":{
+    "slideImgName":["http://placehold.it/350x100","http://placehold.it/350x100","http://placehold.it/350x100"],
+    "news":["消息1","消息2","消息3"],
+    "homesCardAry":[{
+      "postsName":"张三",
+      "postTime":"2018-1-1",
+      "browseNumber":8888,
+      "headPortrait":"http://placehold.it/60x60",
+      "level":"v2",
+      "levelFlag":"up",
+      "cardTitle":"一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择",
+      "metroStation":"通河新村",
+      "cardText":"一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择,一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择.",
+      "homeImgAry":["http://placehold.it/80x80","http://placehold.it/80x80","http://placehold.it/80x80"
+      ,"http://placehold.it/80x80","http://placehold.it/80x80","http://placehold.it/80x80"],
+      "homeCommentAry":["很不错","很不错"]
+    }]
+  }
 }
