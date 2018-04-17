@@ -1,7 +1,8 @@
 import {Component,ViewChild,ElementRef} from '@angular/core';
 import {NavController,Slides,MenuController} from 'ionic-angular';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import 'rxjs/add/operator/map'
+import {RequestService} from "../../server/request.service";
 
 @Component({
   selector: 'page-home',
@@ -15,13 +16,14 @@ export class HomePage {
   clickLineName:string;
   lineStation:Array<string> = [];
 
-  constructor(public navCtrl: NavController,private el:ElementRef,public menuCtrl: MenuController,private http:HttpClientModule) {
+  constructor(public navCtrl: NavController,private el:ElementRef,public menuCtrl: MenuController,
+              private http:HttpClient,private requestService:RequestService) {
   }
 
   ngOnInit():void{
     this.messageBarAnimation();
-    console.log(this.http)
-    this.http.get("http://localhost:3000/home").subscribe(response =>{
+    console.log(this.http);
+    this.requestService.commonRequest("http://localhost:3000/home").subscribe(response =>{
       console.log(response)
     });
 
