@@ -1,8 +1,9 @@
 
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
+import {Observable, throwError} from "rxjs/Observable";
 import {catchError, retry} from "rxjs/operators";
-import {Observable} from "rxjs/Observable";
+
 
 @Injectable()
 export class RequestService{
@@ -22,6 +23,6 @@ export class RequestService{
 
   commonRequest(url:string):Observable<HttpResponse<any>>{
     return this.http.get(url,{ observe: 'response' })
-            .pipe(retry(3),catchError(this.handleError));
+      .pipe(retry(3),catchError(this.handleError));
   }
 }
