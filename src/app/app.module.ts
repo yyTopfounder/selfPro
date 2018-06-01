@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from "@angular/common/http";
 import {RequestService} from "../server/request.service";
+import {EmojService} from "../server/emoj.service"
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {RequestService} from "../server/request.service";
     StatusBar,
     SplashScreen,
     RequestService,
+    EmojService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

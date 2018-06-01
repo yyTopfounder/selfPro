@@ -83,9 +83,7 @@
 <ion-content #mycontent>
   <div class="bannerContrain">
     <ion-slides pager autoplay="3000" loop=true>
-      <ion-slide><img src="http://placehold.it/350x100" alt=""></ion-slide>
-      <ion-slide><img src="http://placehold.it/350x100" alt=""></ion-slide>
-      <ion-slide><img src="http://placehold.it/350x100" alt=""></ion-slide>
+      <ion-slide *ngFor="let slideImgName of slideImgAry"><img [src]=slideImgName alt=""></ion-slide>
     </ion-slides>
   </div>
 
@@ -115,57 +113,38 @@
   </ion-grid>
 
   <div class="newContrain">
-    <div class="newItem">
-      <div><ion-icon name="megaphone"></ion-icon>&nbsp;&nbsp;<span>消息1</span></div>
-      <div><ion-icon name="mail"></ion-icon>&nbsp;&nbsp;<span>消息2</span></div>
-      <div><ion-icon name="alarm"></ion-icon>&nbsp;&nbsp;<span>消息3</span></div>
+    <div class="newItem" *ngFor="let newsItem of newsList">
+      <div><ion-icon name="megaphone"></ion-icon><span>{{newsItem}}</span></div>
     </div>
   </div>
 
-  <ion-card>
+  <ion-card *ngFor="let homesCardItem of homesCardAry">
     <ion-card-header>
       <div class="cardImage">
-        <img src="http://placehold.it/50x50" alt="">
+        <img [src]=homesCardItem.headPortrait alt="">
       </div>
       <div class="cardInfo">
         <div>
-          <span [ngStyle]="{'color':themColor}">张三</span>
-          <span>v.2</span>
-          <span><ion-icon name="arrow-round-up"></ion-icon></span>
+          <span [ngStyle]="{'color':themColor}">{{homesCardItem.postsName}}</span>
+          <span>{{homesCardItem.level}}</span>
+          <span><ion-icon [name]=homesCardItem.levelFlag></ion-icon></span>
         </div>
         <div>
-          <span>2018-1-1</span>
-          <span>浏览:8888</span>
+          <span>{{homesCardItem.postTime}}</span>
+          <span>{{homesCardItem.browseNumber}}</span>
         </div>
       </div>
     </ion-card-header>
     <ion-card-content>
-      <p class="cardContentTitle">一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择</p>
-      <p class="cardContentText"><span [ngStyle]="{'color':themColor,'border-color':themColor}">通河新村</span>&nbsp;&nbsp;
-        一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择,
-        一号线通河新村站步行15分钟品尚公寓多样房型选择满足不同选择</p>
+      <p class="cardContentTitle">{{homesCardItem.cardTitle}}</p>
+      <p class="cardContentText"><span [ngStyle]="{'color':themColor,'border-color':themColor}">{{homesCardItem.metroStation}}</span>&nbsp;&nbsp;
+        {{homesCardItem.cardText}}
+      </p>
       <p class="showAllTexe"><span [ngStyle]="{'color':themColor}">展示全文</span></p>
       <ion-grid>
-        <ion-row>
-          <ion-col col-4>
-            <img src="http://placehold.it/50x50" alt="">
-          </ion-col>
-          <ion-col col-4>
-            <img src="http://placehold.it/50x50" alt="">
-          </ion-col>
-          <ion-col col-4>
-            <img src="http://placehold.it/50x50" alt="">
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-4>
-            <img src="http://placehold.it/50x50" alt="">
-          </ion-col>
-          <ion-col col-4>
-            <img src="http://placehold.it/50x50" alt="">
-          </ion-col>
-          <ion-col col-4>
-            <img src="http://placehold.it/50x50" alt="">
+        <ion-row *ngFor="let imgRowAry of homesCardItem.homeImgAry">
+          <ion-col col-4 *ngFor="let imgItem of imgRowAry">
+            <img [src]=imgItem alt="">
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -197,9 +176,8 @@
 
       <div style="border-bottom: 1px solid #cccccc"></div>
 
-      <div class="commnetContrain">
-        <p><span [ngStyle]="{'color':themColor}">王五</span>:<span>房源不错!</span></p>
-        <p><span [ngStyle]="{'color':themColor}">王五</span>:<span>房源不错!</span></p>
+      <div class="commnetContrain" *ngFor="let commentItem of homesCardItem.homeCommentAry">
+        <p><span [ngStyle]="{'color':themColor}">王五</span>:<span>{{commentItem}}</span></p>
       </div>
 
       <div class="moreCommentBtn" style="" [ngStyle]="{'color':themColor}">显示全部8条回复</div>

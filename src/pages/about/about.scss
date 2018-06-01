@@ -1,3 +1,77 @@
-page-about {
+.span{
+  padding: 5px 10px;
+  border: 1px solid #cccccc;
+}
+.page-about {
+  #postTitle{
+    display: block;
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid #cccccc;
+    padding: 0 5px;
+    height: 35px;
+  }
 
+  #postContent{
+    display: block;
+    width: 100%;
+    border: 0px;
+    height: 100px;
+    padding-left: 5px;
+  }
+
+  .formButtons{
+    span:nth-child(1){
+      @extend .span;
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+    span:nth-child(2){
+      @extend .span;
+      border-radius: 10px;
+      border-radius: 5px;
+      margin-left: 20%;
+    }
+    span:nth-child(3){
+      @extend .span;
+      border-radius: 5px;
+      background: dodgerblue;
+      margin-left: 20px;
+    }
+  }
+
+  .formTabs{
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    display: flex;
+    height: 60px;
+    div{
+      display: inline-block;
+      text-align: center;
+      width: 20%;
+      ion-icon{
+        display: block;
+        height:50%;
+        line-height: 30px;
+        font-size: 22px;
+      }
+      p{
+        margin: 0px;
+        height: 50%;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .toTop{
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 10px;
+    span{
+      font-size: 16px;
+    }
+    input{
+      vertical-align: baseline;
+      margin-left: 10px;
+    }
+  }
 }

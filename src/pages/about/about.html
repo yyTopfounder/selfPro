@@ -4,7 +4,7 @@
       <button ion-button icon-only ></button>
     </ion-buttons>
     <ion-title>
-      发话题
+      发帖中心
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only >草稿箱</button>
@@ -12,15 +12,54 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="page-about">
   <form>
-    <ion-list>
-      <ion-item>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-    </ion-list>
+    <input placeholder="标题,你可以不填" id="postTitle">
+    <div placeholder="这一刻,写下你的想法" id="postContent" contenteditable="true"></div>
+    <div class="formButtons">
+      <span><ion-icon name="pin" style="margin-right: 5px;font-size: 14px"></ion-icon>定位中…</span>
+      <span>保存至草稿箱</span>
+      <span>提交</span>
+    </div>
+    <div class="formTabs">
+      <div style="border-right: 1px solid #cccccc" (click)="qqFaceBtn()" id="emotion">
+        <ion-icon name="happy"></ion-icon>
+        <p>表情</p>
+      </div>
+      <div style="border-right: 1px solid #cccccc" (click)="picturesBtn()">
+        <ion-icon name="image"></ion-icon>
+        <p>图片</p>
+      </div>
+      <div style="border-right: 1px solid #cccccc">
+        <ion-icon name="mic"></ion-icon>
+        <p>语音</p>
+      </div>
+      <div style="border-right: 1px solid #cccccc">
+        <ion-icon name="videocam"></ion-icon>
+        <p>视频</p>
+      </div>
+      <div>
+        <ion-icon name="logo-yen"></ion-icon>
+        <p>打赏</p>
+      </div>
+    </div>
+    <div style="height: 100px;overflow: scroll" *ngIf="showFaceContrain" id="qqFaceContrain" (click)="setCaret()">
+
+    </div>
+    <div class="toTop">
+      <span>我要置顶</span><input type="radio">
+    </div>
+    <div class="toTop">
+      <span>范围:</span><input type="radio" style="margin-right: 5px"><span>本站范围</span>
+    </div>
+    <div class="toTop">
+      <span>方式:</span>
+      <input type="radio" style="margin-right: 5px"><span>时</span>
+      <input type="radio" style="margin-right: 5px;margin-left: 30px"><span>天</span>
+      <input type="radio" style="margin-right: 5px;margin-left: 30px"><span>月</span>
+    </div>
+    <div class="toTop">
+      <span>时长:</span><input type="text" placeholder="请填写时长" style="width: 70%;border: 0px">
+    </div>
   </form>
 </ion-content>

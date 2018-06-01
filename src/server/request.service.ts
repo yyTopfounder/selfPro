@@ -1,7 +1,6 @@
-
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
-import {catchError, retry} from "rxjs/operators";
+import {catchError, retry} from 'rxjs/operators';
 import {Observable} from "rxjs/Observable";
 
 @Injectable()
@@ -17,11 +16,11 @@ export class RequestService{
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
-    return throwError('Something bad happened; please try again later.');
+    return Observable.throw('Something bad happened; please try again later.');
   };
 
   commonRequest(url:string):Observable<HttpResponse<any>>{
     return this.http.get(url,{ observe: 'response' })
-            .pipe(retry(3),catchError(this.handleError));
+      .pipe(retry(3),catchError(this.handleError));
   }
 }

@@ -16,17 +16,27 @@ export class HomePage {
   clickLineName:string;
   lineStation:Array<string> = [];
 
+  //消息轮播数组
+  newsList:Array<string>;
+  //房源帖数组对象
+  homesCardAry:Array<any>
+  //页面头部轮播图数组
+  slideImgAry:Array<string> = ["1"]
+
   constructor(public navCtrl: NavController,private el:ElementRef,public menuCtrl: MenuController,
               private http:HttpClient,private requestService:RequestService) {
   }
 
   ngOnInit():void{
-    this.messageBarAnimation();
     console.log(this.http);
     this.requestService.commonRequest("http://localhost:3000/home").subscribe(response =>{
-      console.log(response)
-    });
+      console.log(response);
 
+      this.newsList = response.body.news;
+      this.slideImgAry = response.body.slideImgName;
+      this.homesCardAry = response.body.homesCardAry;
+      this.messageBarAnimation();
+    });
   }
 
   //侧边菜单导航
